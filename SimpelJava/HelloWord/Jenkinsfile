@@ -1,8 +1,10 @@
 pipeline {
     agent any
+    tools {maven 'maventool'}
     stages {
         stage('Build') {
             steps {
+                script {
                     sh 'mvn clean package'
                 }
             }
@@ -23,3 +25,4 @@ pipeline {
             }
         }
     }
+}
