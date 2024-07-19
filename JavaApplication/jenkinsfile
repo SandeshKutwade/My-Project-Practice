@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "mvn clean install"
+                def pomPath = "JavaApplication/pom.xml"
+                sh "mvn -f ${pomPath} clean install"
+                // sh "mvn clean install"
                 }
             }
         
